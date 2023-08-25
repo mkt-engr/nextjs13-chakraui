@@ -35,6 +35,7 @@ const Page = () => {
         ログインしとる時に出る
         <p>User Name:{userName}</p>
         <p>Name:{name}</p>
+        <p>{JSON.stringify(accounts)}</p>
         <LogoutButton />
       </AuthenticatedTemplate>
     </VStack>
