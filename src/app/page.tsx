@@ -8,8 +8,7 @@ export default function Home() {
   const routes: Route[] = [
     { href: "/read", label: "read" },
     { href: "/signin", label: "ログイン" },
-    { href: "/request-pickup", label: "集荷依頼" },
-    { href: "/package-pickup", label: "荷物受け取り" },
+    { href: "/playground", label: "Playground" },
   ];
   return (
     <Box as={`main`} m={12}>
