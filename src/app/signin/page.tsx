@@ -7,7 +7,6 @@ import {
   useColorMode,
   useColorModeValue,
 } from "@chakra-ui/react";
-import React from "react";
 
 const Page = () => {
   const { toggleColorMode } = useColorMode();

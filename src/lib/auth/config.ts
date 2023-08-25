@@ -9,8 +9,10 @@ export const msalConfig: Configuration = {
     // authority: "https://login.microsoftonline.com/common",
     // authority: "",
     // knownAuthorities: ["s4j9yamatogolf.b2clogin.com"],
-    redirectUri: "http://localhost:3000 ",
-    // postLogoutRedirectUri: "/",
+    // redirectUri: "http://localhost:3000",
+    redirectUri: "https://jwt.ms/",
+    // postLogoutRedirectUri: "/", //ログアウトした時の遷移先（何も書かなければログアウトした画面に戻る）
+    navigateToLoginRequestUrl: true,
   },
   cache: {
     cacheLocation: "localStorage",

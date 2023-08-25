@@ -1,6 +1,12 @@
 "use client";
 import { Button } from "@chakra-ui/react";
 import { useCallback, useState } from "react";
+import {
+  AuthenticatedTemplate,
+  UnauthenticatedTemplate,
+} from "@azure/msal-react";
+import { useMsal } from "@azure/msal-react";
+import { LoginButton, LogoutButton } from "../components/buttons";
 import dayjs from "dayjs";
 import ja from "dayjs/locale/ja";
 import timezone from "dayjs/plugin/timezone";
@@ -100,7 +106,9 @@ const Read = () => {
       });
     }
   }, []);
-
+  const { accounts } = useMsal();
+  const userName = accounts[0]?.username;
+  const name = accounts[0]?.name;
   return (
     <>
       <div>Read</div>
@@ -109,6 +117,16 @@ const Read = () => {
       {logText.map((log, i) => {
         return <div key={i.toString()}>{log}</div>;
       })}
+      <UnauthenticatedTemplate>
+        ログインしてない時に出る
+        <LoginButton />
+      </UnauthenticatedTemplate>
+      <AuthenticatedTemplate>
+        ログインしとる時に出る
+        <p>User Name:{userName}</p>
+        <p>Name:{name}</p>
+        <LogoutButton />
+      </AuthenticatedTemplate>
     </>
   );
 };

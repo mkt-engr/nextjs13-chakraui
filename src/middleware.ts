@@ -15,12 +15,10 @@ export const config = {
 };
 
 export function middleware(req: NextRequest) {
-  console.log(`middleware`);
   if (process.env.ENV !== "local") {
     return NextResponse.next();
   }
   const pathName = req.nextUrl.pathname;
-  // console.log(pathName);
   if (
     pathName.startsWith("/((?!api|_next/static|_next/image|favicon.ico).*)")
   ) {

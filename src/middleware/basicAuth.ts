@@ -5,7 +5,6 @@ const PASSWORD = process.env.BASIC_PASSWORD;
 
 export const basicAuth = (req: NextRequest) => {
   const basicAuth = req.headers.get("authorization");
-  console.log(`basicAuth`);
   if (basicAuth) {
     const auth = basicAuth.split(" ")[1];
     const [user, password] = atob(auth).split(":");
