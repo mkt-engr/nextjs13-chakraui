@@ -8,7 +8,7 @@ export default function Home() {
   const routes: Route[] = [
     { href: "/read", label: "read" },
     { href: "/signin", label: "ログイン" },
-    { href: "/playground", label: "Playground" },
+    { href: "/playground", label: "PlaygroundここでAzure ADB2C使える" },
   ];
   return (
     <Box as={`main`} m={12}>
